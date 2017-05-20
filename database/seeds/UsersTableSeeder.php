@@ -18,7 +18,9 @@ class UsersTableSeeder extends Seeder
             'last_name' => '',
             'email' => 'admin@scopic.com',
             'password' => bcrypt('123456'),
-            'role' => 'admin'
+            'role' => 'admin',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             'id' => 2,
@@ -26,7 +28,9 @@ class UsersTableSeeder extends Seeder
             'last_name' => 'Marinho',
             'email' => 'robstermarinho@gmail.com',
             'password' => bcrypt('123456'),
-            'role' => 'regular'
+            'role' => 'regular',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
         ]);
     }
 }

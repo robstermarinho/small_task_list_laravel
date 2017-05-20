@@ -3,26 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Task;
+use App\User;
+use Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();                                                   // Get current user
+        $tasks = ($user->role == 'regular' ? $user->tasks : Task::all());       // If he is a regular user get only their tasks
+                                                                                // Otherwise get all tasks
+        return view('home')->with('tasks', $tasks);                             // Returning tasks to the view
     }
 }

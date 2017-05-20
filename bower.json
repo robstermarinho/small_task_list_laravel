@@ -1,0 +1,22 @@
+{
+  "name": "scopic_task_list",
+  "description": "A small Task List Test in Laravel",
+  "main": "",
+  "authors": [
+    "˜Robert <robstermarinho@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
+  }
+}
