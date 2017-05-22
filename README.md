@@ -9,11 +9,20 @@ This is a small task list application in Laravel that allow users to authenticat
   - XML and XML export
 ## Getting Started
 
+### Install components
+To install all componetns run the following command in the root directory of your project:
+
+```sh
+composer update
+```
+
 Create a `.env` file in the root directory of your project. Add
-environment-specific variables to connect the database and email settings.
+environment-specific variables for APP_KEY to connect the database and email settings.
 For example:
 
 ```
+APP_KEY=
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -24,10 +33,14 @@ DB_PASSWORD=mypassword
 MAIL_DRIVER=mail
 MAIL_HOST=smtp.mandrillapp.com
 MAIL_PORT=587
-MAIL_USERNAME=myuser@gmail.com
-MAIL_PASSWORD=mypassword
+MAIL_USERNAME=yourusername@gmail.com
+MAIL_PASSWORD=yourpassword
 ```
+Generate a new APP_KEY:
 
+```sh
+php artisan key:generate
+```
 ### Install migration and seed
 
 This App provides some migrations and seed for user and task tables.
@@ -36,6 +49,13 @@ Run the following command in the root directory of your project to create the ta
 ```sh
 php artisan migrate --seed
 ```
+The seeding provides two pre-configured users and some already created tasks. You can logging in the application using one of the following users:
+
+| User | Role | Password
+| ------ | ------ | ------ |
+| admin@scopic.com | admin | 123456 |
+| robstermarinho@gmail.com | regular | 123123 |
+
 
 The simplest way to start a server is:
 
