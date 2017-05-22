@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@scopic.com',
             'password' => bcrypt('123456'),
             'role' => 'admin',
+            'verified' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);
@@ -29,6 +30,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'robstermarinho@gmail.com',
             'password' => bcrypt('123456'),
             'role' => 'regular',
+            'verified' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
         ]);

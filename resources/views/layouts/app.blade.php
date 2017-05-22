@@ -82,5 +82,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/change_status.js') }}"></script>
+    <script src="{{ asset('js/delete_task.js') }}"></script>
 </body>
 </html>

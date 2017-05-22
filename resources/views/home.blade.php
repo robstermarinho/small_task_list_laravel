@@ -18,10 +18,36 @@
                                 <h4><i class="fa  fa-list-alt"></i> List of Tasks</h4>
                             </div>
                             <div class="col-md-4">
-                                <a style="margin-top:3px;" href="{{url('task/add')}}" class="btn btn-default pull-right">
-                                    New Task <i class="fa fa-plus-square"></i>
-                                </a>
+
+                                <div class="row">
+
+                                    <div class="col-md-5">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div style="margin-top:3px;"  class="pull-right btn-group btn-block">
+                                            <button type="button" class="btn_export btn btn-default pull-right  dropdown-toggle" data-toggle="dropdown">
+                                                Export <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="task/task_table_cvs" class="export_format" href="#"><i class="fa fa-file-excel-o"></i> CVS</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="task/task_table_xml" class="export_format" href="#"><i class="fa fa-file-code-o"></i> XML</a>
+                                                </li>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a style="margin-top:3px;" href="{{url('task/add')}}" class="pull-right btn btn-default">
+                                                New Task <i class="fa fa-plus-square"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
                             </div>
+
                         </div>
                     </div>
 
@@ -50,7 +76,7 @@
                                                 <tr class="success table_line_status" data-task-id="{{$task->id}}">
                                                 @endif
                                                 <td><b>{{$key + 1}}</b></td>
-                                                <td>{{$task->user->email}}</td>
+                                                <td>{{ $task->user['email']}}</td>
                                                 <td>{{$task->name}}</td>
                                                 <td>{{$task->description}}</td>
                                                 <td>
@@ -86,7 +112,7 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-danger" href="/task/delete/{{$task->id}}"/>
+                                                        <a name="remove_levels" class="btn btn-danger" data-task-number="{{$key + 1}}" data-task-name="{{$task->name}}" data-url="/task/delete/{{$task->id}}"/>
                                                             <span class="fa fa-trash"></span>
                                                         </a>
                                                     </td>
@@ -115,6 +141,28 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div id="confirm" class="modal fade modal_delete" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p class="text-info modal_delete_msg">Are you sure you want to delete this task?</p>
+                                                    <div class="task_info">
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                                                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
                                 </div>
                             </div>
                         </div>

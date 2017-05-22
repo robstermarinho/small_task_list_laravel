@@ -21,6 +21,8 @@ class UsersController extends Controller
     // Open a form to edit some user
     public function edit($id){
         $user = User::find($id);                                      // Get the user
+        if($user == null)
+            return view('msg_only')->with(['danger' => "This User doesn't exist."]); // If the User Doesn't exist
         return view('users.edit_form')->with(['user' => $user]);      // Return user info to a view form
     }
 
@@ -39,6 +41,9 @@ class UsersController extends Controller
     // Delete some user
     public function delete($id){
         $user = User::find($id);
+        if($user == null)
+            return view('msg_only')->with(['danger' => "This User doesn't exist."]); // If the User Doesn't exist
+
         if(Auth::user()->role == "admin" && Auth::user() != $user){
             foreach($user->tasks as $task)                              // Delete all tasks of this user
                 $task->delete();
