@@ -1,16 +1,16 @@
 # Scopic Task List App
 
-This is a small task list application in Laravel that allow users to authenticate, create a list of tasks and perform CRUD operations. Additionally, it has small role-based access control. This app provides:
+This is a small task list application in Laravel that allows users to authenticate, create a list of tasks and perform CRUD operations. Additionally, it has small role-based access control. This app provides:
 
   - list of tasks, add, edit and delete items
-  - change state of task (AJAX)
-  - role based access control: admin|regular
+  - change state of the task (AJAX)
+  - role-based access control: admin|regular
   - admin user has total control
   - XML and XML export
 ## Getting Started
 
 ### Install components
-To install all componetns run the following command in the root directory of your project:
+To install all components, run the following command in the root directory of your project:
 
 ```sh
 composer update
