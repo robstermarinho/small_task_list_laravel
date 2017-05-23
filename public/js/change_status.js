@@ -43,7 +43,7 @@ $(function(){
                         $('.modal_message').modal('show');
 
                         // update the actual state of the button
-                        $('.change_status').data('actual-state', state_change);
+                        $('.change_status[data-task-id="' + task_id + '"]').data('actual-state', state_change);
                     }else{
                         // display a error message
                         $('.message_modal_content').html('<p class="text-danger"> <i class="fa fa-close"></i> Impossible to update.</p>');
