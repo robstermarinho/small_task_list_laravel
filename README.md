@@ -1,23 +1,23 @@
 # Scopic Task List App
 
-This is a small task list application in Laravel that allows users to authenticate, create a list of tasks and perform CRUD operations. Additionally, it has small role-based access control. This app provides:
+This is a small task list application in Laravel that allows users to authenticate, create a list of tasks and perform CRUD operations. Additionally, it has a small role-based access control. This app provides some features:
 
-  - list of tasks, add, edit and delete items
-  - change state of the task (AJAX)
-  - role-based access control: admin|regular
-  - admin user has total control
-  - XML and XML export
+  - A list of tasks, add, edit and delete items
+  - Change state of the task (AJAX)
+  - Role-based access control: admin|regular
+  - Admin user has total control
+  - Exporting the list to XML and XML
 ## Getting Started
 
 ### Install components
-To install all components, run the following command in the root directory of your project:
+Run the following command in the root directory of your project to install all components needed to the application:
 
 ```sh
 composer update
 ```
 
-Create a `.env` file in the root directory of your project. Add
-environment-specific variables for APP_KEY to connect the database and email settings.
+Create a `.env` file in the root directory of your project. Add some
+environment-specific variables like APP_KEY, database connection and email settings.
 For example:
 
 ```
@@ -43,7 +43,7 @@ php artisan key:generate
 ```
 ### Install migration and seed
 
-This App provides some migrations and seed for user and task tables.
+This App provides some migrations and seed the tables user and task.
 Run the following command in the root directory of your project to create the tables on the database and seed them.
 
 ```sh
